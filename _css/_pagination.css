@@ -1,0 +1,33 @@
+a#normal {
+	color: white;
+	background-color: #0099ff;
+}
+
+a#develop {
+	color: #00ff55;
+	background-color: black; 
+}
+
+a#normal:hover {
+	background-color: #008ae6;
+	text-decoration: none;
+}
+
+a#develop:hover {
+	color: #00cc44;
+	text-decoration: none;
+}
+
+a#normal:active {
+	color: white;
+	background-color: #4dd2ff;
+	border-left: 5px solid blue;
+	text-decoration: none;
+}	
+
+a#develop:active {
+	color: #00ff55;
+	background-color: black;
+	border-left: 5px solid #00ff55;
+	text-decoration: none;
+}

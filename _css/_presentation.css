@@ -1,0 +1,16 @@
+#introduction {
+	background-color: white;
+	height: 700px;
+	margin: 15px;
+	padding: 35px;
+}
+
+#presentation {
+	text-align: center;
+	padding: 25px 50px;
+}
+
+#modes {
+	text-align: center;
+	padding-top: 50px;
+}
