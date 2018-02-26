@@ -1,17 +1,22 @@
 body {
 	background-color: black;
+	font-size: 90%;
+}
+
+main {
+	height: 700px;
+	background-color: white;
 }
 
 /* title */
 h1 {
-	text-align: center;
 }
 
 /* links */
 a {
 	text-decoration: none;
 	text-align: center;
-	padding: 14px 25px;
+	padding: 10px 21px;
 }
 
 /* list */
@@ -20,7 +25,6 @@ ul {
 	margin: 0;
 	padding: 0;
 }
-
 li {
 	display: inline-block;
 }
