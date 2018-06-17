@@ -6,13 +6,24 @@ function termOpen(n) {
 	document.getElementById("presentation").hidden = true;
 	document.getElementById("modes").hidden = true;
 	document.getElementById("bg-main").style.backgroundColor = "black";
-	if (termToSet) return; // do not open while there is modal dialog
+
+	if (termToSet) return;
 	n = parseInt(n);
 	if ((!n) || (isNaN(n))) n = 1;
 	var termid = 'terminal'+n;
+
+	var d = new Date();
+
+	var weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+	var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+	var txt = "%+r Last login: " + weekday[d.getDay()] + " " + months[d.getMonth()] + " " + d.getDate() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + " on console %-r";
+
 	if (!term[n]) {
 		term[n] = new Terminal(
 			{
+				cols:95,
+				rows:30,
 				x: 0,
 				y: 0,
 				id: n,
@@ -21,7 +32,7 @@ function termOpen(n) {
 				frameWidth: 1,
 				frameColor: '#aaaaaa',
 				bgColor: '#000000',
-				greeting: 'Welcome.',
+				greeting: txt,
 				handler: termHandler,
 				exitHandler: termChromeHide
 			}

@@ -5,11 +5,17 @@ body {
 
 main {
 	height: 700px;
+	margin-top: 10%;
+	margin-left: 15%;
+	margin-right: 15%;
 	background-color: white;
+	border: 6px double black;
 }
 
 /* title */
 h1 {
+	text-align: center;
+	font-family: "Courier New", Courier, monospace;
 }
 
 /* links */
