@@ -5,7 +5,8 @@ function termOpen(n) {
 	document.getElementById("introduction").hidden = true;
 	document.getElementById("presentation").hidden = true;
 	document.getElementById("modes").hidden = true;
-	document.getElementById("bg-main").style.backgroundColor = "black";
+	document.getElementById("bg-main").style.background = "none";
+	document.getElementById("bg-main").style.border = "none";
 
 	if (termToSet) return;
 	n = parseInt(n);
@@ -22,7 +23,7 @@ function termOpen(n) {
 	if (!term[n]) {
 		term[n] = new Terminal(
 			{
-				cols:95,
+				cols:86,
 				rows:30,
 				x: 0,
 				y: 0,
@@ -97,6 +98,8 @@ function termChromeHide() {
 	document.getElementById("presentation").hidden = false;
 	document.getElementById("modes").hidden = false;
 	document.getElementById("bg-main").style.backgroundColor = "white";
+	document.getElementById("bg-main").style.border = "double";
+
 
 	var div='terminal'+this.id;
 	TermGlobals.setVisible(div,0);
