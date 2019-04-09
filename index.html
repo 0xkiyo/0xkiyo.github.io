@@ -2,45 +2,24 @@
 <html>
 	<head>
 		<title> Kiyoshi's website </title>
-		<link rel="stylesheet" type="text/css" href="_css/_main.css">
-		<link rel="stylesheet" type="text/css" href="_css/_pagination.css"> 
-		<link rel="stylesheet" type="text/css" href="_css/_presentation.css"> 
-		<link rel="stylesheet" type="text/css" href="_css/term_styles.css">
 
-		<script type="text/javascript" src="library/termlib.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/particles.css">
+
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-		<script type="text/javascript" src="_js/settings.js"></script>
-		<script type="text/javascript" src="_js/gradient.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116334177-2"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			gtag('config', 'UA-116334177-2');
-		</script>
+		<link rel='stylesheet' href='//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.css'>
+
 	</head>
-	<body id="gradient">
-		<main id="bg-main">
-			<div id='introduction'>
-				<h1>
-					<span class="typer" id="main" data-words="Welcome,Bienvenido, Bonjour" data-colors="black,#4db8ff,red" data-delay="125" data-deleteDelay="3000"></span>
-					<span class="cursor" data-owner="main" data-cursorDisplay="|"></span>
-				</h1>
-				<p id='presentation'>Let me introduce myself: I am Kiyoshi Omaza and I love learning technologies related to the field of development every day. Working on small projects helps me to grow professionally and not to lose the motivation in this wonderful world.<br /><br />Currently I am studying Mathematics and computer science at the Universidad Politécnica de Madrid, working primarily with languages such as Java, C, Bash and Haskell.<br /><br />To get to know me a little bit more, select one of the available options. </p> 
+	<body>
+		<div id="particles-js">
+		</div>
+		<div class="container">
+			<p>Let me introduce myself: I am Kiyoshi Omaza and I love learning technologies related to the field of development every day. Working on small projects helps me to grow professionally and not to lose the motivation in this wonderful world.<br /><br />Currently I am studying Mathematics and computer science at the Universidad Politécnica de Madrid, working primarily with languages such as Java, C, Bash and Haskell.<br /><br />To get to know me a little bit more, select one of the available options.</p> 
 
-				<div id='modes'>
-					<ul>
-				 		<!-- <li><a id='normal'>Normal</a></li> -->
-						<li><a id='develop' href="javascript:termOpen(1)">Developer</a></li>
-					</ul>
-				</div>
-			</div>
-			<div id="terminal1" style="z-index:1;"> 
-				<div id="termDiv1"></div>
-			</div>
-		</main>
-		<script src="library/typer.js"></script>
+		</div>
 	</body>
+	<script src="js/particles.js"></script>
 </html>

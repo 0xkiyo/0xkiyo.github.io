@@ -41,3 +41,8 @@ ul {
 li {
 	display: inline-block;
 }
+
+.container {
+    position: relative;
+    z-index: 3;
+}
