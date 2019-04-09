@@ -2,7 +2,11 @@
 var term = new Array();
 
 function termOpen(n) {
-	document.getElementById("container").hidden = true;
+	document.getElementById("introduction").hidden = true;
+	document.getElementById("presentation").hidden = true;
+	document.getElementById("modes").hidden = true;
+	document.getElementById("bg-main").style.background = "none";
+	document.getElementById("bg-main").style.border = "none";
 
 	if (termToSet) return;
 	n = parseInt(n);
@@ -28,7 +32,7 @@ function termOpen(n) {
 				ps:'kiyoshiomaza $',
 				frameWidth: 1,
 				frameColor: '#aaaaaa',
-				bgColor: '#FFFFFF',
+				bgColor: '#000000',
 				greeting: txt,
 				handler: termHandler,
 				exitHandler: termChromeHide
