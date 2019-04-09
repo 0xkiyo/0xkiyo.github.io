@@ -2,7 +2,6 @@
 var term = new Array();
 
 function termOpen(n) {
-	document.getElementById("container").hidden = true;
 
 	if (termToSet) return;
 	n = parseInt(n);
@@ -15,8 +14,7 @@ function termOpen(n) {
 	var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 	var txt = "%+r Last login: " + weekday[d.getDay()] + " " + months[d.getMonth()] + " " + d.getDate() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + " on console %-r";
-
-	if (!term[n]) {
+	//if (!term[n]) {
 		term[n] = new Terminal(
 			{
 				cols:86,
@@ -39,15 +37,15 @@ function termOpen(n) {
 			termChromeShow(n);
 			term[n].open();
 		}
-	}
-	else if (term[n].closed) {
-		termSetChromeState(n, true);
-		termChromeShow(n);
-		term[n].open();
-	}
-	else {
-		termSetChromeState(n, true);
-	}
+	//}
+	//else if (term[n].closed) {
+	//	termSetChromeState(n, true);
+	//	termChromeShow(n);
+	//	term[n].open();
+	//}
+	//else {
+	//	termSetChromeState(n, true);
+	//}
 	termBringToFront(n);
 }
 
