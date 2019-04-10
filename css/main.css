@@ -42,8 +42,8 @@ li {
 	display: inline-block;
 }
 
-#container {
-    position: relative;
-    color: white;
-    z-index: 3;
-}
+.row [class*='col-']:not(.hid) {
+      background-color: #ffeeee;
+      background-clip: content-box;
+      min-height: 20px;
+}     
