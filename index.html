@@ -19,14 +19,18 @@
 		<script src="js/terminal.js"></script>
 	</head>
 	<body>
-		<div id="particles-js"></div>
+		<div id="particles-js" style="z-index:-1;"></div>
 		<div class="container" style="z-index:3;">
     			<div class="col-md-2 col-md-offset-5 align-items-center">
-				<p>Let me introduce myself: I am Kiyoshi Omaza and I love learning technologies related to the field of development every day. Working on small projects helps me to grow professionally and not to lose the motivation in this wonderful world.<br /><br />Currently I am studying Mathematics and computer science at the Universidad Politécnica de Madrid, working primarily with languages such as Java, C, Bash and Haskell.<br /><br />To get to know me a little bit more, select one of the available options.</p>
-				<div id="termDiv1"></div>
+				<p style="color:white;">Let me introduce myself: I am Kiyoshi Omaza and I love learning technologies related to the field of development every day. Working on small projects helps me to grow professionally and not to lose the motivation in this wonderful world.<br /><br />Currently I am studying Mathematics and computer science at the Universidad Politécnica de Madrid, working primarily with languages such as Java, C, Bash and Haskell.<br /><br />To get to know me a little bit more, select one of the available options.</p>
 			</div>
 		</div>
+		<div id="termDiv1" style="z-index:3;"></div>
 	</body>
 	<script src="js/particles.js"></script>
-	<script>termOpen(1)</script>
+	<script>
+		termOpen(1);
+		var left = ($("body").innerWidth() - 577)/2;
+		$("#termDiv1").css("padding-left", left+("px"));
+	</script>
 </html>

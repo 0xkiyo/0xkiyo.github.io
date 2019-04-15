@@ -22,11 +22,11 @@ function termOpen(n) {
 		var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 		var txt = "%+r Last login: " + weekday[d.getDay()] + " " + months[d.getMonth()] + " " + d.getDate() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + " on console %-r";
+
 		term[n]=new Terminal(
 			{
-				x: 120,
-				y: y,
-				rows: 30,
+				cols: 80,
+				rows: 20,
 				greeting: txt,
 				ps:'kiyoshiomaza $',
 				id: n,
