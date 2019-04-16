@@ -19,15 +19,15 @@
 		<script src="js/terminal.js"></script>
 	</head>
 	<body>
-		<div style="z-index:3;">
-			<div id="particles-js" style="z-index:-1;"></div>
-			<div id="termDiv1" style="z-index:3;"></div>
-		</div>
+		<div id="particles-js" style="z-index:-1;"></div>
+		<div id="termDiv1" style="z-index:3;"></div>
 	</body>
 	<script src="js/particles.js"></script>
 	<script>
 		termOpen(1);
 		var left = ($("body").innerWidth() - 577)/2;
 		$("#termDiv1").css("padding-left", left+("px"));
+		var top = ($("body").innerHeight() - 340)/2;
+		$("#termDiv1").css("padding-top", 300+("px"));
 	</script>
 </html>
