@@ -43,7 +43,13 @@ li {
 }
 
 .row [class*='col-']:not(.hid) {
-      background-color: #ffeeee;
-      background-clip: content-box;
-      min-height: 20px;
+  background-color: #ffeeee;
+  background-clip: content-box;
+  min-height: 20px;
 }     
+
+#termDiv1 table {
+	border: 0.5px solid white;
+	background-image: url("/images/china.jpg");
+	background-repeat: round;
+}
