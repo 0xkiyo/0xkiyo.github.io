@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+	
 	<head>
 		<title> Kiyoshi's website </title>
 
@@ -18,16 +19,49 @@
 		<script src="js/termlib.js"></script>
 		<script src="js/terminal.js"></script>
 	</head>
+	
 	<body>
+		
 		<div id="particles-js" style="z-index:-1;"></div>
 		<div id="termDiv1" style="z-index:3;"></div>
+
 	</body>
+	
 	<script src="js/particles.js"></script>
 	<script>
+		
 		termOpen(1);
+		
 		var paddingLeft = ($("#particles-js").innerWidth() - 577)/2;
 		$("#termDiv1").css("padding-left", paddingLeft+("px"));
 		var paddingTop = ($("#particles-js").innerHeight() - 340)/2;
 		$("#termDiv1").css("padding-top", paddingTop+("px"));
+
+		var welcome = "Let me introduce myself: I am Kiyoshi Omaza and I love learning technologies related to the field of development every day. Working on small projects helps me to grow professionally and not to lose the motivation in this wonderful world. Currently I am studying Mathematics and computer science at the Universidad Politécnica de Madrid, working primarily with languages such as Java, C, Bash and Haskell. To get to know me a little bit more, select one of the available options.";
+		
+		disable();
+		var writeWel = setInterval(myWelcome, 75);
+
+		function myWelcome() {
+		  term[1].write(welcome.charAt(0));
+		  if (welcome == "") {
+				clearInterval(writeWel);
+				term[1].newLine();
+				term[1].prompt();
+				enable();
+			}
+			else {
+			  welcome = welcome.substring(1); 
+			}
+		}
+
+		function disable() {
+			document.onkeydown = function (e) { return false; }
+		}
+
+		function enable() { 
+			document.onkeydown = function (e) { return true; }
+		}
+
 	</script>
 </html>

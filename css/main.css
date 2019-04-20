@@ -49,7 +49,6 @@ li {
 }     
 
 #termDiv1 table {
-	border: 0.5px solid white;
-	background-image: url("/images/china.jpg");
-	background-repeat: round;
+	/*background-image: url("http://localhost:8080/images/cyber_security.jpg");
+	background-repeat: round;*/
 }

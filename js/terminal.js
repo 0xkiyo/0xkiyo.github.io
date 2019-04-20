@@ -46,17 +46,15 @@ function termOpen(n) {
 	else {
 		term[n].focus();
 	}
+
+	
 }
 
 function termHandler() {
 	this.newLine();
 	var cmd=this.lineBuffer;
 	if (cmd!='') {
-		if (cmd=='switch') {
-			var other=(this.id==1)? 2:1;
-			termOpen(other);
-		}
-		else if (cmd=='clear') {
+		if (cmd=='clear') {
 			this.clear();
 		}
 		else if (cmd=='exit') {
