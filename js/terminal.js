@@ -28,7 +28,7 @@ function termOpen(n) {
 			dimCols = 50;
 		}
 		else {
-			dimCols = 110;
+			dimCols = 140;
 		}
 
 		term[n]=new Terminal(

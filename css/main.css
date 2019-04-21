@@ -3,10 +3,4 @@ body {
 	padding: 0px;
 	margin: 0px;
 	font-size: 90%;
-	font-family: 'Hack-Regular' !important;
-}
-
-@font-face {
-  font-family: 'Hack-Regular';
-  src: url('/font/Hack-Regular.ttf')  format('truetype')
 }
