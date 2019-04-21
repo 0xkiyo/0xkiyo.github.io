@@ -1,8 +1,7 @@
 .term {
-	font-family: courier,fixed,swiss,sans-serif;
-	font-size: 12px;
+	font-family: 'Hack-Regular';
+	font-size: 13px;
 	color: #33d011;
-	background: none;
 }
 
 .termReverse {
@@ -11,8 +10,7 @@
 }
 
 #termDiv1 table {
-	border-left: 2px solid black;
-	border-right: 2px solid black;
-	border-top: 1px solid black;
-	border-bottom: 1px solid black;
+	width: 609px;
+	background-color: black;
+	border: 2px solid black;
 }

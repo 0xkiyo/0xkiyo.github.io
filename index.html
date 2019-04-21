@@ -23,6 +23,7 @@
 	<body>
 		
 		<div id="particles-js" style="z-index:-1;"></div>
+		<div class="text-center" style="z-index:3;background-color: red; color: white;top: 0px;padding: 1px;">IN DEVELOPMENT</div>
 		<div id="termDiv1" style="z-index:3;"></div>
 
 	</body>
@@ -32,9 +33,9 @@
 		
 		termOpen(1);
 		
-		var paddingLeft = ($("#particles-js").innerWidth() - 577)/2;
+		var paddingLeft = ($("#particles-js").innerWidth() - 609)/2;
 		$("#termDiv1").css("padding-left", paddingLeft+("px"));
-		var paddingTop = ($("#particles-js").innerHeight() - 340)/2;
+		var paddingTop = ($("#particles-js").innerHeight() - 372)/2;
 		$("#termDiv1").css("padding-top", paddingTop+("px"));
 
 		var command = "cat > presentation.txt"
@@ -61,6 +62,10 @@
 				term[1].newLine();
 				term[1].prompt();
 				$("#particles-js").css("background-color","#2F4F4F");
+				$("#termDiv1").css("transition", "padding 5s linear");
+				paddingTop = paddingTop/2;
+				$("#termDiv1").css("padding-top", paddingTop+("px"));
+
 				enable();
 			}
 			else {
