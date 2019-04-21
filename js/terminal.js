@@ -24,11 +24,11 @@ function termOpen(n) {
 		var txt = "%+r Last login: " + weekday[d.getDay()] + " " + months[d.getMonth()] + " " + d.getDate() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + " on console %-r\n";
 
 		var dimCols;
-		if ($("#particles-js").innerWidth() < 609) {
-			dimCols = 50;
+		if ($("#particles-js").innerWidth() < 600) {
+			dimCols = 40;
 		}
 		else {
-			dimCols = 140;
+			dimCols = 100;
 		}
 
 		term[n]=new Terminal(

@@ -33,18 +33,19 @@
 		
 		termOpen(1);
 		
-		var paddingLeft;
-		var newWidth = $("#termDiv1 table").innerWidth();
-		var newHeight = $("#termDiv1 table").innerHeight();
- 
-		if ($("#particles-js").innerWidth() >= newWidth) {
-			paddingLeft = ($("#particles-js").innerWidth() - newWidth)/2;
-		}
+		if ($("#particles-js").innerWidth() < 600) {
+			$("#termDiv1 table").width($("#termDiv1 table").innerWidth());	
+		} 
 		else {
-			paddingLeft = $("#particles-js").innerWidth();
+			$("#termDiv1 table").width(600);
 		}
 
-		$("#termDiv1").css("padding-left", paddingLeft+"px");
+		var newWidth = $("#termDiv1 table").innerWidth();
+
+		var newHeight = $("#termDiv1 table").innerHeight();
+ 
+ 		var paddingLeft = ($("#particles-js").innerWidth() - newWidth)/2;
+		$("#termDiv1").css("padding-left", paddingLeft+("px"));
 		
 		var paddingTop = ($("#particles-js").innerHeight() - newHeight)/2;
 		$("#termDiv1").css("padding-top", paddingTop+"px");
