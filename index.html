@@ -35,12 +35,15 @@
 		
 		var paddingLeft; 
 		if ($("#particles-js").innerWidth() >= 609) {
-			$("#termDiv1 table").css("width", "609px");
+			$("#termDiv1 table").width(605);
 			paddingLeft = ($("#particles-js").innerWidth() - 609)/2;
 			$("#termDiv1").css("padding-left", paddingLeft+"px");
 		}
 		else {
-			$("#termDiv1 table").css("width", $("#particles-js").innerWidth()+"px");
+			var newWidth = $("#termDiv1 table").innerWidth();
+			$("#termDiv1 table").width(newWidth);
+			paddingLeft = ($("#particles-js").innerWidth() - (newWidth+9))/2;
+			$("#termDiv1").css("padding-left", paddingLeft+"px");
 		}
 
 		
@@ -52,7 +55,8 @@
 		
 
 		var command = "cat > presentation.txt"
-		var welcome = "Let me introduce myself: I am Kiyoshi Omaza and I love learning technologies related to the field of development every day. Working on small projects helps me to grow professionally and not to lose the motivation in this wonderful world. Currently I am studying Mathematics and computer science at the Universidad Politecnica de Madrid, working primarily with languages such as Java, C, Bash and Haskell. To get to know me a little bit more, select one of the available options.";
+		// var welcome = "Let me introduce myself: I am Kiyoshi Omaza and I love learning technologies related to the field of development every day. Working on small projects helps me to grow professionally and not to lose the motivation in this wonderful world. Currently I am studying Mathematics and computer science at the Universidad Politecnica de Madrid, working primarily with languages such as Java, C, Bash and Haskell. To get to know me a little bit more, select one of the available options.";
+		var welcome = "Let me";
 		
 		disable();
 		var writeCom = setInterval(myCommand, 100);
