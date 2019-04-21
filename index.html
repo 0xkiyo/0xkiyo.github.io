@@ -37,20 +37,33 @@
 		var paddingTop = ($("#particles-js").innerHeight() - 340)/2;
 		$("#termDiv1").css("padding-top", paddingTop+("px"));
 
+		var command = "cat > presentation.txt"
 		var welcome = "Let me introduce myself: I am Kiyoshi Omaza and I love learning technologies related to the field of development every day. Working on small projects helps me to grow professionally and not to lose the motivation in this wonderful world. Currently I am studying Mathematics and computer science at the Universidad Politécnica de Madrid, working primarily with languages such as Java, C, Bash and Haskell. To get to know me a little bit more, select one of the available options.";
 		
 		disable();
-		var writeWel = setInterval(myWelcome, 75);
+		var writeCom = setInterval(myCommand, 100);
+		var writeWel
+		setTimeout(function(){ writeWel = setInterval(myWelcome, 50); }, 3000);
 
+		function myCommand() {
+			if (command == "") {
+				clearInterval(writeCom);
+				term[1].newLine();
+			}
+			else {
+				term[1].write(command.charAt(0));
+			  command = command.substring(1); 
+			}
+		}
 		function myWelcome() {
-		  term[1].write(welcome.charAt(0));
-		  if (welcome == "") {
+			if (welcome == "") {
 				clearInterval(writeWel);
 				term[1].newLine();
 				term[1].prompt();
 				enable();
 			}
 			else {
+				term[1].write(welcome.charAt(0));
 			  welcome = welcome.substring(1); 
 			}
 		}
