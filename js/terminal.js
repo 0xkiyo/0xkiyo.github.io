@@ -23,9 +23,17 @@ function termOpen(n) {
 
 		var txt = "%+r Last login: " + weekday[d.getDay()] + " " + months[d.getMonth()] + " " + d.getDate() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + " on console %-r\n";
 
+		var dimCols;
+		if ($("#particles-js").innerWidth() < 609) {
+			dimCols = 50;
+		}
+		else {
+			dimCols = 110;
+		}
+
 		term[n]=new Terminal(
 			{
-				cols: 110,
+				cols: dimCols,
 				rows: 20,
 				greeting: txt,
 				ps:'kiyoshiomaza $',

@@ -33,13 +33,27 @@
 		
 		termOpen(1);
 		
-		var paddingLeft = ($("#particles-js").innerWidth() - 609)/2;
-		$("#termDiv1").css("padding-left", paddingLeft+("px"));
-		var paddingTop = ($("#particles-js").innerHeight() - 372)/2;
-		$("#termDiv1").css("padding-top", paddingTop+("px"));
+		var paddingLeft; 
+		if ($("#particles-js").innerWidth() >= 609) {
+			$("#termDiv1 table").css("width", "609px");
+			paddingLeft = ($("#particles-js").innerWidth() - 609)/2;
+			$("#termDiv1").css("padding-left", paddingLeft+"px");
+		}
+		else {
+			$("#termDiv1 table").css("width", $("#particles-js").innerWidth()+"px");
+		}
+
+		
+		var paddingTop;
+		if ($("#particles-js").innerHeight() >= 372) {
+			paddingTop = ($("#particles-js").innerHeight() - 372)/2;
+			$("#termDiv1").css("padding-top", paddingTop+"px");
+		} 
+		
 
 		var command = "cat > presentation.txt"
-		var welcome = "Let me introduce myself: I am Kiyoshi Omaza and I love learning technologies related to the field of development every day. Working on small projects helps me to grow professionally and not to lose the motivation in this wonderful world. Currently I am studying Mathematics and computer science at the Universidad Politecnica de Madrid, working primarily with languages such as Java, C, Bash and Haskell. To get to know me a little bit more, select one of the available options.";
+		var welcome = "Let ";
+		// var welcome = "Let me introduce myself: I am Kiyoshi Omaza and I love learning technologies related to the field of development every day. Working on small projects helps me to grow professionally and not to lose the motivation in this wonderful world. Currently I am studying Mathematics and computer science at the Universidad Politecnica de Madrid, working primarily with languages such as Java, C, Bash and Haskell. To get to know me a little bit more, select one of the available options.";
 		
 		disable();
 		var writeCom = setInterval(myCommand, 100);
@@ -63,8 +77,10 @@
 				term[1].prompt();
 				$("#particles-js").css("background-color","#2F4F4F");
 				$("#termDiv1").css("transition", "padding 5s linear");
-				paddingTop = paddingTop/2;
-				$("#termDiv1").css("padding-top", paddingTop+("px"));
+				if (paddingTop != undefined) {
+					paddingTop = paddingTop/2;
+					$("#termDiv1").css("padding-top", paddingTop+("px"));
+				} 
 
 				enable();
 			}
