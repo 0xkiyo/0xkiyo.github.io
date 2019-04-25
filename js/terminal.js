@@ -11,18 +11,18 @@ var helpPage=[
 	'     help ..... show this help page'
 ];
 
-var presentation = " Let me introduce myself: I am Kiyoshi Omaza and I love learning technologies related to the field of development every day. Working on small projects helps me to grow professionally and not to lose the motivation in this wonderful world. Currently I am studying Mathematics and computer science at the Universidad Politecnica de Madrid, working primarily with languages such as Java, C, Bash and Haskell. To get to know me a little bit more, select one of the available options.";
+var presentation = "Let me introduce myself: I am Kiyoshi Omaza and I love learning technologies related to the field of development every day. Working on small projects helps me to grow professionally and not to lose the motivation in this wonderful world. Currently I am studying Mathematics and computer science at the Universidad Politecnica de Madrid, working primarily with languages such as Java, C, Bash and Haskell. To get to know me a little bit more, select one of the available options.";
 
-var mainContent=' experience/     education/     projects/     presentation.txt     contact.txt';
+var mainContent='experience/     education/     projects/     presentation.txt     contact.txt';
 
 var expContent=[
-	' ../     ey.txt     ineco.txt     teaching.txt'
+	'../     ey.txt     ineco.txt     teaching.txt'
 ];
 var eduContent=[
-	' ../     university.txt'
+	'../     university.txt'
 ];
 var projContent=[
-	' ../     present.txt     future.txt'
+	'../     present.txt     future.txt'
 ];
 
 function termOpen(n) {
@@ -47,7 +47,7 @@ function termOpen(n) {
 				cols: dimCols,
 				rows: 20,
 				greeting: txt,
-				ps: ' kiyoshiomaza $',
+				ps: 'kiyoshiomaza $',
 				id: n,
 				termDiv: 'termDiv'+n,
 				frameColor: '#aaaaaa',
@@ -76,38 +76,38 @@ function termHandler() {
 			this.clear();
 		}
 		else if (cmd=='ls') {
-			if (this.ps == ' kiyoshiomaza/experience $') {
+			if (this.ps == 'kiyoshiomaza/experience $') {
 				this.write(expContent);
 			}
-			else if (this.ps == ' kiyoshiomaza/education $') {
+			else if (this.ps == 'kiyoshiomaza/education $') {
 				this.write(eduContent);
 			}
-			else if (this.ps == ' kiyoshiomaza/projects $') {
+			else if (this.ps == 'kiyoshiomaza/projects $') {
 				this.write(projContent);
 			}
 			else {
 				this.write(mainContent);
 			}
 		}
-		else if (cmd=='cat presentation.txt' && this.ps == ' kiyoshiomaza $') {
+		else if (cmd=='cat presentation.txt' && this.ps == 'kiyoshiomaza $') {
 			this.write(presentation);
 		}
 		else if (cmd=='cd ..') {
-			if (this.ps != ' kiyoshiomaza $') {
-				this.ps = ' kiyoshiomaza $';
+			if (this.ps != 'kiyoshiomaza $') {
+				this.ps = 'kiyoshiomaza $';
 			}
 		}
 		else if (cmd=='cd') {
-			this.ps = ' kiyoshiomaza $';
+			this.ps = 'kiyoshiomaza $';
 		}
 		else if (cmd=='cd experience') {
-			this.ps = ' kiyoshiomaza/experience $';
+			this.ps = 'kiyoshiomaza/experience $';
 		}
 		else if (cmd=='cd education') {
-			this.ps = ' kiyoshiomaza/education $';
+			this.ps = 'kiyoshiomaza/education $';
 		}
 		else if (cmd=='cd projects') {
-			this.ps = ' kiyoshiomaza/projects $';
+			this.ps = 'kiyoshiomaza/projects $';
 		}
 		else if (cmd=='help') {
 			this.write(helpPage);
