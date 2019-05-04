@@ -2,15 +2,27 @@ var term=new Array();
 
 var helpPage=[
 	'%CS%+r Terminal Help %-r%n',
-	'  This is just a tiny test for multiple terminals.',
-	'  use one of the following commands:',
+	' This is just a tiny test for multiple terminals.',
+	' use one of the following commands:',
+	'     ls .... lists the contents',
+	'     cat .... it reads data from files, and outputs their contents.',
+	'     cd .... used to change the current working directory',
 	'     clear .... clear the terminal',
-	'     exit ..... close the terminal (or <ESC>)',
-	'     id ....... show terminal\'s id',
-	'     switch ... switch to other terminal',
-	'     help ..... show this help page',
-	'  other input will be echoed to the terminal.',
-	' '
+	'     help ..... show this help page'
+];
+
+var presentation = "Let me introduce myself: I am Kiyoshi Omaza and I love learning technologies related to the field of development every day. Working on small projects helps me to grow professionally and not to lose the motivation in this wonderful world. Currently I am studying Mathematics and computer science at the Universidad Politecnica de Madrid, working primarily with languages such as Java, C, Bash and Haskell. To get to know me a little bit more, select one of the available options.";
+
+var mainContent='experience/     education/     projects/     presentation.txt     contact.txt';
+
+var expContent=[
+	'../     ey.txt     ineco.txt     teaching.txt'
+];
+var eduContent=[
+	'../     university.txt'
+];
+var projContent=[
+	'../     present.txt     future.txt'
 ];
 
 function termOpen(n) {
@@ -30,20 +42,18 @@ function termOpen(n) {
 		else {
 			dimCols = 100;
 		}
-
 		term[n]=new Terminal(
 			{
 				cols: dimCols,
 				rows: 20,
 				greeting: txt,
-				ps:'kiyoshiomaza $',
+				ps: 'kiyoshiomaza $',
 				id: n,
 				termDiv: 'termDiv'+n,
 				frameColor: '#aaaaaa',
 				bgColor: '#000000',
 				crsrBlinkMode: true,
-				handler: termHandler,
-				exitHandler: termExitHandler
+				handler: termHandler
 			}
 		);
 		if (term[n]) term[n].open();
@@ -65,18 +75,42 @@ function termHandler() {
 		if (cmd=='clear') {
 			this.clear();
 		}
-		else if (cmd=='exit') {
-			this.close();
+		else if (cmd=='ls') {
+			if (this.ps == 'kiyoshiomaza/experience $') {
+				this.write(expContent);
+			}
+			else if (this.ps == 'kiyoshiomaza/education $') {
+				this.write(eduContent);
+			}
+			else if (this.ps == 'kiyoshiomaza/projects $') {
+				this.write(projContent);
+			}
+			else {
+				this.write(mainContent);
+			}
+		}
+		else if (cmd=='cat presentation.txt' && this.ps == 'kiyoshiomaza $') {
+			this.write(presentation);
+		}
+		else if (cmd=='cd ..') {
+			if (this.ps != 'kiyoshiomaza $') {
+				this.ps = 'kiyoshiomaza $';
+			}
+		}
+		else if (cmd=='cd') {
+			this.ps = 'kiyoshiomaza $';
+		}
+		else if (cmd=='cd experience') {
+			this.ps = 'kiyoshiomaza/experience $';
+		}
+		else if (cmd=='cd education') {
+			this.ps = 'kiyoshiomaza/education $';
+		}
+		else if (cmd=='cd projects') {
+			this.ps = 'kiyoshiomaza/projects $';
 		}
 		else if (cmd=='help') {
 			this.write(helpPage);
-		}
-		else if (cmd=='id') {
-			this.write('terminal id: '+this.id);
-		}
-		else {
-			this.type('You typed: '+cmd);
-			this.newLine();
 		}
 	}
 	this.prompt();
